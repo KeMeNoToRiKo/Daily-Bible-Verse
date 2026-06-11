@@ -53,12 +53,11 @@ function buildEmbed(verse) {
         color: 0x1a2a4a,
 
         author: {
-          name: "✦  Verse of the Day",
-          icon_url:
-            "https://em-content.zobj.net/source/twitter/376/open-book_1f4d6.png",
+          name: "✦ Verse of the Day ✦",
+
         },
 
-        title: `${greeting} — ${today}`,
+        title: `${today}`,
 
         description: [
           "```",
@@ -67,41 +66,14 @@ function buildEmbed(verse) {
           `**— ${verseRef}**`,
         ].join("\n"),
 
-        fields: [
-          {
-            name: "📖 Reflection",
-            value:
-              "Take a moment to sit with this verse. Let it speak to your day.",
-            inline: false,
-          },
-          {
-            name: "🙏 Prayer",
-            value:
-              "Lord, let Your Word be a lamp to my feet and a light to my path. Amen.",
-            inline: false,
-          },
-        ],
-
         footer: {
-          text: "Daily Scripture  •  ourmanna.com",
-          icon_url:
-            "https://em-content.zobj.net/source/twitter/376/latin-cross_271d.png",
+          text: "thanks be to God!",
         },
 
         timestamp: new Date().toISOString(),
-
-        // Thin gold-ish accent image strip along the top (optional thumbnail)
-        thumbnail: {
-          url: "https://em-content.zobj.net/source/twitter/376/sparkles_2728.png",
-        },
       },
     ],
 
-    // A subtle @silent ping so it doesn't buzz anyone
-    username: "Daily Word",
-    avatar_url:
-      "https://em-content.zobj.net/source/twitter/376/open-book_1f4d6.png",
-  };
 }
 
 // ── Main ──────────────────────────────────────────────────────────────────────
