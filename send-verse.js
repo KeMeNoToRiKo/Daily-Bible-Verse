@@ -39,40 +39,44 @@ async function getTodaysBibleVerse() {
 
 function buildEmbed(verse) {
   const today = getTodayFormatted();
-  const greeting = getGreeting();
 
   const verseText = verse.text?.trim() ?? "Could not load verse.";
-  const verseRef = verse.reference?.trim() ?? "";
+  const verseRef = verse.reference?.trim() ?? "Unknown Reference";
 
   return {
     embeds: [
       {
-        // Deep navy banner colour — evokes open sky / scripture scrolls
-        color: 0x1a2a4a,
+        // Deep gold/bronze color for an elegant, sacred aesthetic
+        color: 0xd4af37, 
 
-        author: {
-          name: "✦  Verse of the Day  ✦",
-        },
+        title: `✨ Verse of the Day`,
+        
+        // The date works great as the subtitle/description area
+        description: `**${today}**`, 
 
-        title: `${today}`,
-
-        description: [
-          `> *${verseText}*`,
-          "",
-          `✦ **${verseRef}**`,
-        ].join("\n"),
+        // Fields create a beautiful, isolated, and readable container for the text
+        fields: [
+          {
+            name: `\u200B`, // Blank character acting as vertical spacing
+            value: `*“ ${verseText} ”*`,
+            inline: false
+          },
+          {
+            name: `\u200B`,
+            value: `── **${verseRef}**`,
+            inline: false
+          }
+        ],
 
         footer: {
-          text: "Thanks be to God!",
+          text: "🙏 Thanks be to God!",
         },
 
         timestamp: new Date().toISOString(),
-
       },
     ],
   };
 }
-
 // ── Main ──────────────────────────────────────────────────────────────────────
 
 async function main() {
