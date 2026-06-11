@@ -1,0 +1,31 @@
+name: 📖 Daily Bible Verse
+
+on:
+  schedule:
+    # Runs every day at 6:00 AM Philippine Time (UTC+8 = 22:00 UTC previous day)
+    - cron: "0 22 * * *"
+
+  # Allow manual trigger from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  send-verse:
+    name: Send Verse to Discord
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: ⬇️ Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🟢 Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: 📦 Install dependencies
+        run: npm install axios
+
+      - name: 📖 Send daily Bible verse
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: node send-verse.js
