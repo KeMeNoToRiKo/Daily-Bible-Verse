@@ -49,7 +49,7 @@ function buildEmbed(verse) {
         // Deep gold/bronze color for an elegant, sacred aesthetic
         color: 0xd4af37, 
 
-        title: `✨ Verse of the Day`,
+        title: `✦  Verse of the Day  ✦`,
         
         // The date works great as the subtitle/description area
         description: `**${today}**`, 
