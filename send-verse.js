@@ -61,10 +61,9 @@ function buildEmbed(verse) {
         title: `${greeting} — ${today}`,
 
         description: [
-          "```",
-          verseText,
-          "```",
-          `**— ${verseRef}**`,
+          `> *${verseText}*`,
+          "",
+          `✦ **${verseRef}**`,
         ].join("\n"),
 
         fields: [
