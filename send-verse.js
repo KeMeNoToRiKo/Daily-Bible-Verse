@@ -44,6 +44,7 @@ function buildEmbed(verse) {
   const verseRef = verse.reference?.trim() ?? "Unknown Reference";
 
   return {
+    content: "@everyone",
     embeds: [
       {
         // Deep gold/bronze color for an elegant, sacred aesthetic
